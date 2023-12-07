@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    
+{% endblock title %}
+    
+
+
+{% block content  %}
+    <table class="table table-striped">
+            <thead>
+                    <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Department</th>
+                            <th>Organisation</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                    </tr>
+            </thead>
+            <tbody>
+                {% for i in obj %}
+                    <tr>
+                            <td>{{i.first_name}}</td>
+                            <td>{{i.last_name}}</td>
+                            <td>{{i.department}}</td>
+                            <td>{{i.organisation}}</td>
+                            <td>{{i.address}}</td>
+                            <td>
+                                <a href="{% url 'employee_update_url' i.id %}"><input type="button" value="Update"/></a>
+                                <a href="{% url 'employee_delete_url' i.id %}"><input type="button" value="Delete"/></a>
+                            </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+    </table>
+
+
+{% endblock content  %}
+    

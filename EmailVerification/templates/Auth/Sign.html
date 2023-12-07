@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title  %}
+    
+{% endblock title  %}
+    
+            
+
+
+{% block content %}
+
+                    <h2 align="center" style="color: blueviolet;">Sign Up Page</h2>
+                <form class="container jumbotron" method="post">
+                    {% csrf_token %}
+                        
+                        {{ forms|crispy }}
+
+                        <input type="submit"  class="btn btn btn-primary" value="Sign Up"/>
+                </form>
+    
+{% endblock content %}
+    

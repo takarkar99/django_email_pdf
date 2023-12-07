@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    <title>Delete</title>
+{% endblock title %}
+    
+
+
+
+{% block content  %}
+            <form method="post" class="container jumbotron">
+                    {% csrf_token %}
+
+                        <h2>Do You Really want to delete Employee Name <span style="color: blueviolet;">{{obj.first_name}}</span> employee id <span style="color: brown;">{{obj.id}}</span></h2>
+
+                            <a href="{% url 'employee_list_url'%}"><input type="submit" value="Delete" class="btn btn btn-success "/></a>
+                            <a href="{% url 'employee_list_url'%}"><input type="button" value="Go Back" class="btn btn btn-danger "/></a>
+            </form>
+{% endblock content  %}
+    

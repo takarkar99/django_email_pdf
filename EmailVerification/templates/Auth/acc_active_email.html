@@ -1,0 +1,18 @@
+ {% autoescape off %}
+ 
+ hi {{user.name }}
+    thanks for signing up to Bhushan-&-team-email-box
+
+
+    to set up your Account, please click on the link to confirm your registration,
+
+        http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+    thanks for using our site!
+
+
+    sincerely
+
+    Bhushan-&-team-email-box
+
+{% endautoescape %}
